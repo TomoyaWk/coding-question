@@ -1,4 +1,4 @@
-from anwer.question1 import diff_config
+from answer.question1 import diff_config
 
 
 def test_diff_config_basic():

@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from typing import Any, Dict
 
 
@@ -12,11 +13,7 @@ def diff_config(old: Dict[str, Any], new: Dict[str, Any]) -> Dict[str, Any]:
 
     added = {k: new[k] for k in added_keys}
     removed = {k: old[k] for k in removed_keys}
-    changed = {
-        k: {"before": old[k], "after": new[k]}
-        for k in common_keys
-        if old[k] != new[k]
-    }
+    changed = {k: {"before": old[k], "after": new[k]} for k in common_keys if old[k] != new[k]}
 
     return {
         "added": added,

@@ -5,10 +5,10 @@
 - `anwer/`: 各問題の回答コードを保存
 - `tests/`: 回答に対する pytest テストを保存
 
-最初の問題:
-- `question/question1.md`
-- `anwer/question1.py`
-- `tests/test_question1.py`
+問題・回答・テストの形式:
+- `question/question{n}.md`
+- `anwer/question{n}.py`
+- `tests/test_question{n}.py`
 
 テスト実行:
 ```bash
