@@ -1,7 +1,7 @@
 from answer.question2 import fizzbuzz_custom
 
 
-def test_answer_fizz_buzz():
+def test_answer_fizz_buzz()-> None:
     n = 10
     rules = [(2, "Even"), (3, "Triple")]
 
