@@ -1,7 +1,7 @@
 from answer.question1 import diff_config
 
 
-def test_diff_config_basic()-> None:
+def test_diff_config_basic() -> None:
     old = {"host": "localhost", "port": 5432, "debug": False}
     new = {"host": "localhost", "port": 5433, "debug": True, "timeout": 30}
 
@@ -15,28 +15,28 @@ def test_diff_config_basic()-> None:
     }
 
 
-def test_diff_config_no_changes()-> None:
+def test_diff_config_no_changes() -> None:
     old = {"a": 1, "b": 2}
     new = {"a": 1, "b": 2}
 
     assert diff_config(old, new) == {"added": {}, "removed": {}, "changed": {}}
 
 
-def test_diff_config_removed_only()-> None:
+def test_diff_config_removed_only() -> None:
     old = {"a": 1, "b": 2}
     new = {"a": 1}
 
     assert diff_config(old, new) == {"added": {}, "removed": {"b": 2}, "changed": {}}
 
 
-def test_diff_config_added_only()-> None:
+def test_diff_config_added_only() -> None:
     old = {"a": 1}
     new = {"a": 1, "b": 2}
 
     assert diff_config(old, new) == {"added": {"b": 2}, "removed": {}, "changed": {}}
 
 
-def test_diff_config_changed_only()-> None:
+def test_diff_config_changed_only() -> None:
     old = {"a": 1, "b": 2}
     new = {"a": 1, "b": 3}
 
